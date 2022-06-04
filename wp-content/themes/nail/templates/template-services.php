@@ -68,6 +68,8 @@ get_header();
                                 query_posts([
                                     'posts_per_page' => 50,
                                     'post_type' => 'product',
+                                    'orderby' => 'id',
+                                    'order' => 'ASC',
                                     'tax_query' => [
                                         [
                                             'taxonomy' => 'product_cat',
@@ -124,6 +126,8 @@ get_header();
                                         <?php
                                         query_posts([
                                             'posts_per_page' => 50,
+                                            'orderby' => 'id',
+                                            'order' => 'ASC',
                                             'post_type' => 'product',
                                             'tax_query' => [
                                                 [

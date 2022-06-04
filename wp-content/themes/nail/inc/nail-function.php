@@ -41,3 +41,11 @@ function getImageTerm($term)
     $thumb_id = get_term_meta($term->term_id, 'thumbnail_id', true);
     return wp_get_attachment_url($thumb_id);
 }
+
+function cc_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+
+add_filter('upload_mimes', 'cc_mime_types');
