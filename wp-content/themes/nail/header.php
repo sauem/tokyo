@@ -44,7 +44,7 @@
     <link href="<?= ASSET ?>/css/datetimepicker.min.css" rel="stylesheet">
 
     <!-- TEMPLATE CSS -->
-    <link href="<?= ASSET ?>/css/style.css" rel="stylesheet">
+    <link href="<?= ASSET ?>/css/style.css?v=<?= time()?>" rel="stylesheet">
 
     <!-- ON SCROLL ANIMATION -->
     <link href="<?= ASSET ?>/css/animate.css" rel="stylesheet">
