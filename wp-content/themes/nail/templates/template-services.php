@@ -12,7 +12,9 @@ $thumb = get_the_post_thumbnail_url();
 $categories = get_categories([
     'taxonomy' => 'product_cat',
     'hide_empty' => 0,
-    'parent' => 0
+    'parent' => 0,
+    'orderby' => 'term_id',
+    'order' => 'ASC'
 ]);
 get_header();
 
@@ -51,14 +53,15 @@ get_header();
         <div class="container">
             <?php foreach ($categories as $index => $category) : ?>
                 <div class="row mb-40 d-flex align-items-top">
-                    <div class="col-lg-6 <?= $index % 2 === 0 ? 'order-md-2' : 'order-md-1' ?>">
+                    <div class="col-lg-4 <?= $index % 2 === 0 ? 'order-md-2' : 'order-md-1' ?>">
                         <div class="pricing-1-img wow fadeInRight">
                             <img class="img-fluid w-100" src="<?= getImageTerm($category) ?>" alt="pricing-image">
                         </div>
                     </div>
-                    <div class="col-lg-6 <?= $index % 2 !== 0 ? 'order-md-2' : 'order-md-1' ?>">
+                    <div class="col-lg-8 <?= $index % 2 !== 0 ? 'order-md-2' : 'order-md-1' ?>">
                         <div class="pricing-1-wrapper wow fadeInLeft">
                             <h4 class="h4-lg pricing-title"><?= $category->name ?></h4>
+                            <p class="section-id"><?= $category->description ?></p>
                             <ul class="pricing-1-list">
 
                                 <?php
@@ -107,11 +110,14 @@ get_header();
                                 'taxonomy' => 'product_cat',
                                 'parent' => $category->term_id,
                                 'hide_empty' => 0,
+                                'orderby' => 'term_id',
+                                'order' => 'ASC'
                             ]);
                             if (!empty($children)):
                                 foreach ($children as $key => $subCat):
                                     ?>
                                     <h4 class="h4-lg pricing-title mt-4"><?= $subCat->name ?></h4>
+                                    <p class="section-id"><?= $subCat->description ?></p>
 
                                     <ul class="pricing-1-list">
 
@@ -149,7 +155,10 @@ get_header();
                                                     </div>
                                                 </div>
                                                 <?php if ($product->get_sale_price() > 0) : ?>
-                                                    <h6 class="text-danger">REGULAR PRICE $<?= $product->get_regular_price() ?> (SAVE $<?= $product->get_regular_price() - $product->get_sale_price() ?>)</h6>
+                                                    <h6 class="text-danger">REGULAR PRICE
+                                                        $<?= $product->get_regular_price() ?> (SAVE
+                                                        $<?= $product->get_regular_price() - $product->get_sale_price() ?>
+                                                        )</h6>
                                                 <?php endif; ?>
                                                 <!-- Description -->
                                                 <div class="price-txt">
