@@ -1,0 +1,11 @@
+2022-06-01T19:37:21+00:00 CRITICAL Uncaught Error: Call to undefined function twentytwenty_the_theme_svg() in /Volumes/DATAHD/Thang/project/thaotokyo/wp-content/themes/nail/template-parts/modal-menu.php:22
+Stack trace:
+#0 /Volumes/DATAHD/Thang/project/thaotokyo/wp-includes/template.php(772): require()
+#1 /Volumes/DATAHD/Thang/project/thaotokyo/wp-includes/template.php(716): load_template('/Volumes/DATAHD...', false, Array)
+#2 /Volumes/DATAHD/Thang/project/thaotokyo/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Volumes/DATAHD/Thang/project/thaotokyo/wp-content/themes/nail/header.php(67): get_template_part('template-parts/...')
+#4 /Volumes/DATAHD/Thang/project/thaotokyo/wp-includes/template.php(770): require_once('/Volumes/DATAHD...')
+#5 /Volumes/DATAHD/Thang/project/thaotokyo/wp-includes/template.php(716): load_template('/Volumes/DATAHD...', true, Array)
+#6 /Volumes/DATAHD/Thang/project/thaotokyo/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Volumes/DATAHD/Thang/proje in /Volumes/DATAHD/Thang/project/thaotokyo/wp-content/themes/nail/template-parts/modal-menu.php on line 22
+
