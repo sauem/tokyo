@@ -45,11 +45,11 @@ get_header();
                     while (have_posts()) : the_post();
                         ?>
                         <div class="masonry-image">
-                            <a class="image-link" href="<?= ASSET ?>/images/gallery/700x800_1.jpg">
+                            <a class="" href="<?= get_permalink() ?>">
                                 <div class="hover-overlay">
 
                                     <!-- Image -->
-                                    <img class="img-fluid" src="<?= ASSET ?>/images/gallery/700x800_1.jpg"
+                                    <img class="img-fluid" src="<?= get_the_post_thumbnail_url() ?>"
                                          alt="gallery-image"/>
                                     <div class="item-overlay"></div>
 
@@ -64,6 +64,7 @@ get_header();
                             </a>
                         </div>
                     <?php endwhile;
+
                     wp_reset_query(); ?>
                 </div>
             </div>

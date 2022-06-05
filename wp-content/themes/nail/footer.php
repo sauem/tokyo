@@ -44,10 +44,8 @@
 <script src="<?= ASSET ?>/js/jquery.flexslider.js"></script>
 <script src="<?= ASSET ?>/js/owl.carousel.min.js"></script>
 <script src="<?= ASSET ?>/js/jquery.magnific-popup.min.js"></script>
-<script src="<?= ASSET ?>/js/booking-form.js"></script>
-<script src="<?= ASSET ?>/js/contact-form.js"></script>
-<script src="<?= ASSET ?>/js/jquery.validate.min.js"></script>
 <script src="<?= ASSET ?>/js/jquery.ajaxchimp.min.js"></script>
+<script src="<?= ASSET ?>/js/fslightbox.js"></script>
 <script src="<?= ASSET ?>/js/wow.js"></script>
 
 <script src="<?= ASSET ?>/js/custom.js"></script>

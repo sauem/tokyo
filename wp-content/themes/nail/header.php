@@ -50,7 +50,7 @@
     <link href="<?= ASSET ?>/css/animate.css" rel="stylesheet">
 
     <!-- RESPONSIVE CSS -->
-    <link href="<?= ASSET ?>/css/responsive.css" rel="stylesheet">
+    <link href="<?= ASSET ?>/css/responsive.css?v=1.2" rel="stylesheet">
     <style>
         .page .entry-title {
             display: none;
