@@ -49,3 +49,50 @@ function cc_mime_types($mimes)
 }
 
 add_filter('upload_mimes', 'cc_mime_types');
+
+
+function wpse_125805_add_image_meta_data($attachment_ID)
+{
+    $text = "Love lashes in Fuqua xtreme mink eyelash extensions advance skin care microdermabrasion treatment additional eyebrow & lash services eyelash tinting microneedling microchanneling airbrush service image micro peel treatment body waxing permanent makeup areola nipple pigmentation organic scalp pigmentation cupping therapy ear candling derma swiss lose inch body wrap beauty products eye treatments face treatments multiple area treatments";
+
+    $my_post = array(
+        'ID' => $attachment_ID,
+        'post_excerpt' => "$text $attachment_ID",  // caption
+        'post_content' => "$text $attachment_ID",  // description
+    );
+    wp_update_post($my_post);
+
+    // update alt text for post
+    update_post_meta($attachment_ID, '_wp_attachment_image_alt', "$text $attachment_ID");
+}
+
+add_action('add_attachment', 'wpse_125805_add_image_meta_data');
+
+
+function reUpdateMeta()
+{
+    $image_ids = get_posts(
+        array(
+            'post_type' => 'attachment',
+            'post_mime_type' => 'image',
+            'post_status' => 'inherit',
+            'posts_per_page' => -1,
+            'fields' => 'ids',
+        ));
+    foreach ($image_ids as $attachment_ID) {
+        $text = "Love lashes in Fuqua xtreme mink eyelash extensions advance skin care microdermabrasion treatment additional eyebrow & lash services eyelash tinting microneedling microchanneling airbrush service image micro peel treatment body waxing permanent makeup areola nipple pigmentation organic scalp pigmentation cupping therapy ear candling derma swiss lose inch body wrap beauty products eye treatments face treatments multiple area treatments";
+
+        $my_post = array(
+            'ID' => $attachment_ID,
+            'post_title' => "$text $attachment_ID",  // caption
+            'post_excerpt' => "$text $attachment_ID",  // caption
+            'post_content' => "$text $attachment_ID",  // description
+        );
+        wp_update_post($my_post);
+
+        // update alt text for post
+        update_post_meta($attachment_ID, '_wp_attachment_image_alt', "$text $attachment_ID");
+    }
+}
+
+add_action('init', 'reUpdateMeta');
