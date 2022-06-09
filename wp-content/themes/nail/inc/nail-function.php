@@ -95,4 +95,4 @@ function reUpdateMeta()
     }
 }
 
-add_action('init', 'reUpdateMeta');
+//add_action('init', 'reUpdateMeta');
