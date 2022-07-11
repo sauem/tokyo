@@ -95,4 +95,14 @@ function reUpdateMeta()
     }
 }
 
+function get_logo()
+{
+    $custom_logo_id = get_theme_mod('custom_logo');
+    $image = wp_get_attachment_image_src($custom_logo_id, 'full');
+    if (isset($image[0]) && !empty($image[0])) {
+        return $image[0];
+    }
+    return ASSET . '/images/logo-01.png';
+}
+
 //add_action('init', 'reUpdateMeta');

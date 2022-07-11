@@ -44,13 +44,15 @@
     <link href="<?= ASSET ?>/css/datetimepicker.min.css" rel="stylesheet">
 
     <!-- TEMPLATE CSS -->
-    <link href="<?= ASSET ?>/css/style.css?v=<?= time()?>" rel="stylesheet">
+    <link href="<?= ASSET ?>/css/style.css?v=<?= time() ?>" rel="stylesheet">
 
     <!-- ON SCROLL ANIMATION -->
     <link href="<?= ASSET ?>/css/animate.css" rel="stylesheet">
 
     <!-- RESPONSIVE CSS -->
     <link href="<?= ASSET ?>/css/responsive.css?v=1.2" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="<?= get_site_icon_url() ?>">
     <style>
         .page .entry-title {
             display: none;
@@ -74,5 +76,5 @@ wp_body_open();
 <!--    </div>-->
 <!--</div>-->
 <div id="page" class="page bg--moccasin">
-    <?php get_template_part('inc/header')?>
+    <?php get_template_part('inc/header') ?>
 <?php
