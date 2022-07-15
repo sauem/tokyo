@@ -19,10 +19,13 @@
 
 
                 <!-- HEADER LOGO -->
-                <div class="desktoplogo"><a href="#hero-4" class="logo-black"><img src="<?= ASSET ?>/images/logo-01.png"
-                                                                                   alt="header-logo"></a></div>
-                <div class="desktoplogo"><a href="#hero-4" class="logo-white"><img
-                                src="<?= ASSET ?>/images/logo-white.png" alt="header-logo"></a></div>
+                <div class="desktoplogo"><a href="/" class="logo-black">
+                        <img src="<?= get_logo() ?>" alt="<?= get_bloginfo() ?>"/>
+                    </a></div>
+                <div class="desktoplogo">
+                    <a href="/" class="logo-white">
+                        <img src="<?= get_logo() ?>" alt="<?= get_bloginfo() ?>"/>
+                    </a></div>
 
 
                 <!-- MAIN MENU -->
