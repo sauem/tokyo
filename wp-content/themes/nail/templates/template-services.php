@@ -65,18 +65,35 @@ get_header();
                             <ul class="pricing-1-list">
 
                                 <?php
+                                $children = get_categories([
+                                    'taxonomy' => 'product_cat',
+                                    'parent' => $category->term_id,
+                                    'hide_empty' => 0,
+                                    'orderby' => 'term_id',
+                                    'order' => 'ASC'
+                                ]);
+                                $childrenIds = array_map(function ($item) {
+                                    return $item->term_id;
+                                }, $children);
                                 query_posts([
                                     'posts_per_page' => 50,
                                     'post_type' => 'product',
                                     'orderby' => 'id',
                                     'order' => 'ASC',
                                     'tax_query' => [
+                                        'AND',
                                         [
                                             'taxonomy' => 'product_cat',
                                             'field' => 'term_id',
                                             'terms' => [$category->term_id],
                                             'operator' => 'IN',
-                                        ]
+                                        ],
+                                        [
+                                            'taxonomy' => 'product_cat',
+                                            'field' => 'term_id',
+                                            'terms' => $childrenIds,
+                                            'operator' => 'NOT IN',
+                                        ],
                                     ],
 
                                 ]);
@@ -124,6 +141,7 @@ get_header();
                                     <ul class="pricing-1-list">
 
                                         <?php
+
                                         query_posts([
                                             'posts_per_page' => 50,
                                             'orderby' => 'id',
