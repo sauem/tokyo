@@ -50,7 +50,7 @@
     <link href="<?= ASSET ?>/css/animate.css" rel="stylesheet">
 
     <!-- RESPONSIVE CSS -->
-    <link href="<?= ASSET ?>/css/responsive.css?v=1.2" rel="stylesheet">
+    <link href="<?= ASSET ?>/css/responsive.css?v=<?= time() ?>" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="<?= get_site_icon_url() ?>">
     <style>
