@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,mDAAoD;EAClD,8BAA+B;IAC7B,MAAM,EAAE,SAAS;;EAEnB,QAAS;IACP,SAAS,EAAE,IAAI",
+"sources": ["nail.scss"],
+"names": [],
+"file": "nail.css"
+}

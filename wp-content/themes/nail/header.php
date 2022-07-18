@@ -51,6 +51,7 @@
 
     <!-- RESPONSIVE CSS -->
     <link href="<?= ASSET ?>/css/responsive.css?v=<?= time() ?>" rel="stylesheet">
+    <link href="<?= ASSET ?>/css/nail.css?v=<?= time() ?>" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="<?= get_site_icon_url() ?>">
     <style>
