@@ -9,13 +9,18 @@
  */
 
 $thumb = get_the_post_thumbnail_url();
+$pageId = get_the_ID();
+$showCate = get_post_meta($pageId, 'showCategory', true);
+
 $categories = get_categories([
     'taxonomy' => 'product_cat',
     'hide_empty' => 0,
     'parent' => 0,
+    'include' => $showCate,
     'orderby' => 'term_id',
     'order' => 'ASC'
 ]);
+
 get_header();
 
 ?>
